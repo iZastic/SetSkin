@@ -1,0 +1,17 @@
+name: SetSkin
+author: iZastic
+description: Allows a player to set a skin from the Mojan API
+version: 1.0.0
+main: iZastic\SetSkin\Main
+api: 3.11.5
+
+commands:
+  setskin:
+    description: Sets a skin from the Mojang API
+    usage: "/setskin <username>"
+    permission: setskin
+
+permissions:
+  setskin:
+    description: Allows a user to set a skin from the Mojang API
+    default: op
