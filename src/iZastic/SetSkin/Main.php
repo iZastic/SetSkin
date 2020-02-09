@@ -30,7 +30,7 @@ class Main extends PluginBase implements Listener
         if (file_exists($this->playerDataPath)) {
             $this->playerData = json_decode(file_get_contents($this->playerDataPath));
         } else {
-            $this->playerData = (object) array();
+            $this->playerData = (object)array();
         }
 
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -62,6 +62,10 @@ class Main extends PluginBase implements Listener
 
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool
     {
+        if ($command->getName() !== "setskin") {
+            return false;
+        }
+
         if (!$sender instanceof Player) {
             $sender->sendMessage("This command is only usable by players");
             return false;
